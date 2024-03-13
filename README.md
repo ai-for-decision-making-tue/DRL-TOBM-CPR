@@ -1,5 +1,6 @@
 # Deep Reinforcement Learning for Two-sided Online Bipartite Matching in Collaborative Order Picking
 This repository contains the code for the paper "Deep Reinforcement Learning for Two-sided Online Bipartite Matching in Collaborative Order Picking", accepted in the conference track of ACML2023.
+https://proceedings.mlr.press/v222/begnardi24a/begnardi24a.pdf
 
 ## Requirements
 The following libraries are necessary to run the code:
