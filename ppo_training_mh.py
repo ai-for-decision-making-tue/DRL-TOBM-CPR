@@ -1,6 +1,8 @@
 from pettingzoo.utils import BaseWrapper
 
 from adapted_tianshou.collector_multiagent import MultiAgentCollector
+from adapted_tianshou.collector import Collector
+from adapted_tianshou.vecbuf import VectorReplayBuffer
 from gnn_models import MHGNN
 
 from adapted_tianshou.ppo_multihead import PPOPolicy
@@ -134,11 +136,11 @@ if __name__ == "__main__":
 
 
     collector = MultiAgentCollector(policy, envs,
-                                    ts.data.VectorReplayBuffer(20000, train_args["nr_envs"]),
+                                    VectorReplayBuffer(20000, train_args["nr_envs"]),
                                     exploration_noise=True, preprocess_fn=preprocess_function)
     collector.reset()
 
-    test_collector = ts.data.Collector(policy, test_envs, exploration_noise=False, preprocess_fn=preprocess_function)
+    test_collector = Collector(policy, test_envs, exploration_noise=False, preprocess_fn=preprocess_function)
     test_collector.reset()
 
     log_path = os.path.join("logs/ppo_mh")

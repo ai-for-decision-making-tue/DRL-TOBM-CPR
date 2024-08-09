@@ -3,6 +3,7 @@ import numpy as np
 
 import tianshou as ts
 from adapted_tianshou.pettingzoo_env import ModifiedPettingZooEnv
+from adapted_tianshou.collector import Collector
 
 from pettingzoo.utils import BaseWrapper
 
@@ -113,7 +114,7 @@ if __name__ == "__main__":
     )
 
     policy.eval()
-    collector = ts.data.Collector(policy, test_envs, exploration_noise=False, preprocess_fn=preprocess_function)
+    collector = Collector(policy, test_envs, exploration_noise=False, preprocess_fn=preprocess_function)
 
     start_time = time()
 

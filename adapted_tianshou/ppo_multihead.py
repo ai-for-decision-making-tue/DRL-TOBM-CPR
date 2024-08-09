@@ -4,7 +4,9 @@ import numpy as np
 import torch
 from torch import nn
 
-from tianshou.data import Batch, ReplayBuffer, to_torch_as
+# from tianshou.data import Batch, ReplayBuffer, to_torch_as
+from tianshou.data import ReplayBuffer, to_torch_as
+from adapted_tianshou.batch import Batch
 from adapted_tianshou.a2c_multihead import A2CPolicy
 from tianshou.utils.net.common import ActorCritic
 

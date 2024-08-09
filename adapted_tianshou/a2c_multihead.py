@@ -5,8 +5,11 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from tianshou.data import Batch, ReplayBuffer, to_torch_as
+# from tianshou.data import Batch, Rep0layBuffer, to_torch_as
+from tianshou.data import ReplayBuffer, to_torch_as
+from adapted_tianshou.batch import Batch
 from adapted_tianshou.pg_multihead import PGPolicy
+
 from tianshou.utils.net.common import ActorCritic
 
 

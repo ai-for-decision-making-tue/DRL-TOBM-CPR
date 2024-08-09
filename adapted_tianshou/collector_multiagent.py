@@ -9,16 +9,24 @@ import numpy as np
 import torch
 
 from tianshou.data import (
-    Batch,
+    # Batch,
     CachedReplayBuffer,
-    ReplayBuffer,
-    ReplayBufferManager,
-    VectorReplayBuffer,
-    to_numpy, Collector,
+    # ReplayBuffer,
+    # ReplayBufferManager,
+    # VectorReplayBuffer,
+    to_numpy,
+    # Collector,
 )
-from tianshou.data.batch import _alloc_by_keys_diff
+# from tianshou.data.batch import _alloc_by_keys_diff
+from adapted_tianshou.batch import Batch
+from adapted_tianshou.collector import Collector
+from adapted_tianshou.batch import _alloc_by_keys_diff
+from adapted_tianshou.buf import ReplayBuffer
+from adapted_tianshou.vecbuf import VectorReplayBuffer
+from adapted_tianshou.manager import ReplayBufferManager
 from tianshou.env import BaseVectorEnv, DummyVectorEnv
 from tianshou.policy import BasePolicy
+
 
 
 class MultiAgentCollector(Collector):
